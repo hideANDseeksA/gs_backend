@@ -775,7 +775,7 @@ for (const [email, firstName, lastName, password] of values) {
     <p>Your account has been created successfully. You can now log in using the following credentials:</p>
     <p><strong>Email:</strong> ${email}<br><strong>Password:</strong> ${password}</p>
     <p>Please keep this information secure.</p>
-    <p><a href="https://fastupload.io/9f054b51a2992bf3" style="padding: 10px 20px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px;">Download MC Salik-Sik</a></p>
+    <p><a href="https://download-page-psi.vercel.app/" style="padding: 10px 20px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px;">Download MC Salik-Sik</a></p>
     <p>Best regards,<br>MC Salik-Sik Library System Team</p>
   `;
 
