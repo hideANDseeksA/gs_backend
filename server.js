@@ -45,6 +45,24 @@ app.get("/api/books", async (req, res) => {
   }
 });
 
+//delete students
+
+app.delete("/api/students/:email", async (req, res) => {
+  const { email } = req.params;
+  try {
+    const result = await client.query("DELETE FROM students WHERE email = $1", [email]);
+
+    if (result.rowCount === 0) {
+      return res.status(404).send("Student not found");
+    }
+
+    res.send("Student Deleted");
+  } catch (error) {
+    console.error("Error deleting Student:", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
 // Add a new book
 app.post("/api/books", async (req, res) => {
   const { title, author, year, url, stocks } = req.body;
