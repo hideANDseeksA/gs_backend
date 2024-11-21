@@ -268,22 +268,6 @@ app.post('/api/research/bulk', async (req, res) => {
   }
 });
 
-
-app.use((req, res, next) => {
-  console.log(`${req.method} request to ${req.url}`);
-  next();
-});
-
-// Basic route
-app.get('/', (req, res) => {
-  res.send('Hello! The server is running.');
-});
-
-// Print "Server is live" every 40 seconds
-setInterval(() => {
-  console.log('Server is live');
-}, 40000);
-
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
