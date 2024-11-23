@@ -142,7 +142,7 @@ app.delete("/api/research/:title", async (req, res) => {
 
 app.get("/api/research", async (req, res) => {
   try {
-    const result = await client.query("SELECT * FROM research_repository ORDER BY title");
+    const result = await client.query("SELECT * FROM research_repository ORDER BY title ASC");
     res.json(result.rows);
   } catch (error) {
     console.error("Error fetching books:", error);
