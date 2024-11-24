@@ -268,6 +268,15 @@ app.post('/api/research/bulk', async (req, res) => {
   }
 });
 
+app.get("/api/Research-graph", async (req, res) => {
+  try {
+    const result = await client.query(" SELECT year, COUNT(*) AS count FROM research_repository WHERE year IS NOT NULL GROUP BY year ORDER BY year ASC");
+    res.json(result.rows);
+  } catch (error) {
+    console.error("Error fetching books:", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
